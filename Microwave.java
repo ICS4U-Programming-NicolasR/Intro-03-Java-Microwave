@@ -1,10 +1,10 @@
 import java.util.Scanner;
 /**
-* Calculates the amount of logs that can fit in a truck.
+* Calculates the time needed in a microwave.
 *
 * @author  Mr. Riscalas
 * @version 1.0
-* @since   2023-02-16
+* @since   2023-02-22
 */
 
 public final class Microwave {
@@ -43,9 +43,10 @@ public final class Microwave {
         final String food = inputScan.nextLine().toUpperCase();
         // Ask the user for quantity of food
         System.out.println("What is the quantity of the food you'd like to"
-                        + "heat?");
+                        + " heat?");
         // Error catching
         try {
+            // get the quantity as a number
             final double quantity = inputScan.nextInt();
             if (quantity > minFood && quantity < maxFood) {
                 final double timeMod = ((quantity - one) / two) + one;
@@ -68,7 +69,7 @@ public final class Microwave {
                                     + " food");
             }
         // catch the error
-        } catch (NumberFormatException error) {
+        } catch (java.util.InputMismatchException error) {
             System.out.println("You have entered a string "
                     + "You must enter a real number\n"
                     + error);
