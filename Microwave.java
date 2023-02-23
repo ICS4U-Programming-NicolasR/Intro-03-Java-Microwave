@@ -55,10 +55,8 @@ public final class Microwave {
                         time = pizzaTime;
                     } else if ("SUB".equals(food)) {
                         time = subTime;
-                    } else if ("SOUP".equals(food)) {
-                        time = soupTime;
                     } else {
-                        System.out.println("You have entered an invalid input");
+                        time = soupTime;
                     }
                     final double totalSec = timeMod * time;
                     final double timeSec = totalSec % secInMin;
