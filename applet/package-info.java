@@ -12,4 +12,4 @@
  * @since 1.0
  * @see java.awt
  */
-package java.lang.applet;
+package applet;
