@@ -35,13 +35,17 @@ public final class Microwave {
         final int maxFood = 4;
         final int minFood = 0;
         final double secInMin = 60;
+        final String sub = "SUB";
+        final String pizza = "PIZZA";
+        final String soup = "SOUP";
         double time = 0.0;
         // Created a scanner object
         final Scanner inputScan = new Scanner(System.in);
         // Ask the user for the type of food
-        System.out.println("What is the type of food you'd like to heat up?(soup, sub, pizza)");
+        System.out.println("What is the type of food you'd like to heat up?"
+                            + "(soup, sub, pizza)");
         final String food = inputScan.nextLine().toUpperCase();
-        if ("PIZZA".equals(food) || "SUB".equals(food) || "SOUP".equals(food)) {
+        if (sub.equals(food) || pizza.equals(food) || soup.equals(food)) {
             // Ask the user for quantity of food
             System.out.println("What is the quantity of the food you'd like to"
                     + " heat?");
@@ -51,9 +55,9 @@ public final class Microwave {
                 final double quantity = inputScan.nextInt();
                 if (quantity > minFood && quantity < maxFood) {
                     final double timeMod = ((quantity - one) / two) + one;
-                    if ("PIZZA".equals(food)) {
+                    if (pizza.equals(food)) {
                         time = pizzaTime;
-                    } else if ("SUB".equals(food)) {
+                    } else if (sub.equals(food)) {
                         time = subTime;
                     } else {
                         time = soupTime;
@@ -74,7 +78,8 @@ public final class Microwave {
                         + error);
             }
         } else {
-            System.out.println("You have entered an invalid input. The only possible options are sub, pizza or soup");
+            System.out.println("You have entered an invalid input."
+                    + " The only possible options are sub, pizza or soup");
         }
         inputScan.close();
     }
