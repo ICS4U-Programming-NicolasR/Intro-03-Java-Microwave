@@ -41,7 +41,7 @@ public final class Microwave {
         // Ask the user for the type of food
         System.out.println("What is the type of food you'd like to heat up?(soup, sub, pizza)");
         final String food = inputScan.nextLine().toUpperCase();
-        if (food == "PIZZA" || food == "SUB" || food == "SOUP") {
+        if ("PIZZA".equals(food) || "SUB".equals(food) || "SOUP".equals(food)) {
             // Ask the user for quantity of food
             System.out.println("What is the quantity of the food you'd like to"
                     + " heat?");
