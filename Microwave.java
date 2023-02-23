@@ -73,8 +73,8 @@ public final class Microwave {
                 }
                 // catch the error
             } catch (java.util.InputMismatchException error) {
-                System.out.println("You have entered a string "
-                        + "You must enter a real number\n"
+                System.out.println("You may have entered an invalid input "
+                        + "You must enter an integer number\n"
                         + error);
             }
         } else {
