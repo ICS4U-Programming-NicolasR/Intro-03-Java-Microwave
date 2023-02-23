@@ -39,40 +39,44 @@ public final class Microwave {
         // Created a scanner object
         final Scanner inputScan = new Scanner(System.in);
         // Ask the user for the type of food
-        System.out.println("What is the type of food you'd like to heat up?");
+        System.out.println("What is the type of food you'd like to heat up?(soup, sub, pizza)");
         final String food = inputScan.nextLine().toUpperCase();
-        // Ask the user for quantity of food
-        System.out.println("What is the quantity of the food you'd like to"
-                        + " heat?");
-        // Error catching
-        try {
-            // get the quantity as a number
-            final double quantity = inputScan.nextInt();
-            if (quantity > minFood && quantity < maxFood) {
-                final double timeMod = ((quantity - one) / two) + one;
-                if ("PIZZA".equals(food)) {
-                    time = pizzaTime;
-                } else if ("SUB".equals(food)) {
-                    time = subTime;
-                } else if ("SOUP".equals(food)) {
-                    time = soupTime;
+        if (food == "PIZZA" || food == "SUB" || food == "SOUP") {
+            // Ask the user for quantity of food
+            System.out.println("What is the quantity of the food you'd like to"
+                    + " heat?");
+            // Error catching
+            try {
+                // get the quantity as a number
+                final double quantity = inputScan.nextInt();
+                if (quantity > minFood && quantity < maxFood) {
+                    final double timeMod = ((quantity - one) / two) + one;
+                    if ("PIZZA".equals(food)) {
+                        time = pizzaTime;
+                    } else if ("SUB".equals(food)) {
+                        time = subTime;
+                    } else if ("SOUP".equals(food)) {
+                        time = soupTime;
+                    } else {
+                        System.out.println("You have entered an invalid input");
+                    }
+                    final double totalSec = timeMod * time;
+                    final double timeSec = totalSec % secInMin;
+                    final double timeMin = totalSec / secInMin;
+                    System.out.format("The time you need to enter is %d:%02d\n",
+                            (int) timeMin, (int) timeSec);
                 } else {
-                    System.out.println("You have entered an invalid input");
+                    System.out.println("You can only have a max of 3 types of"
+                            + " food");
                 }
-                final double totalSec = timeMod * time;
-                final double timeSec = totalSec % secInMin;
-                final double timeMin = totalSec / secInMin;
-                System.out.format("The time you need to enter is %d:%02d\n",
-                                (int) timeMin, (int) timeSec);
-            } else {
-                System.out.println("You can only have a max of 3 types of"
-                                    + " food");
+                // catch the error
+            } catch (java.util.InputMismatchException error) {
+                System.out.println("You have entered a string "
+                        + "You must enter a real number\n"
+                        + error);
             }
-        // catch the error
-        } catch (java.util.InputMismatchException error) {
-            System.out.println("You have entered a string "
-                    + "You must enter a real number\n"
-                    + error);
+        } else {
+            System.out.println("You have entered an invalid input. The only possible options are sub, pizza or soup");
         }
         inputScan.close();
     }
