@@ -68,8 +68,8 @@ public final class Microwave {
                     System.out.format("The time you need to enter is %d:%02d\n",
                             (int) timeMin, (int) timeSec);
                 } else {
-                    System.out.println("You can only have a max of 3 types of"
-                            + " food");
+                    System.out.println("You've entered an invalid quantity "
+                    + "Must be more than 0 and less than 4");
                 }
                 // catch the error
             } catch (java.util.InputMismatchException error) {
