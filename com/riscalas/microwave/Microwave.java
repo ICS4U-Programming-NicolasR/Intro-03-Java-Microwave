@@ -1,8 +1,9 @@
+package com.riscalas.microwave;
 import java.util.Scanner;
 /**
 * Calculates the time needed in a microwave.
 *
-* @author  Mr. Riscalas
+* @author  riscalas
 * @version 1.0
 * @since   2023-02-22
 */
