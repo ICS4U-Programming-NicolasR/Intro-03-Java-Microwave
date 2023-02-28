@@ -10,6 +10,8 @@
  * methods that the applet context can use to
  * initialize, start, and stop the applet.
  *
+ * @author  riscalas
  * @since 1.0
  * @see java.awt
  */
+package com.riscalas.microwave;
