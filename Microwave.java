@@ -69,7 +69,7 @@ public final class Microwave {
                             (int) timeMin, (int) timeSec);
                 } else {
                     System.out.println("You've entered an invalid quantity "
-                    + "Must be more than 0 and less than 4");
+                        + "Must be more than 0 and less than 4");
                 }
                 // catch the error
             } catch (java.util.InputMismatchException error) {
